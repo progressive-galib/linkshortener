@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>URL Shortener</title>
+</head>
+<body>
+  <h1>URL Shortener</h1>
+  <form action="/shorten" method="post">
+    <label for="original_url">Enter URL:</label>
+    <input type="url" name="original_url" id="original_url" required>
+    <button type="submit">Shorten</button>
+  </form>
+  <h2>Shortened URLs</h2>
+  <ul>
+    <% db.execute('SELECT * FROM urls').each do |row| %>
+      <li><%= row[1] %> - <a href="/<%= row[2] %>"><%= row[2] %></a></li>
+    <% end %>
+  </ul>
+</body>
+</html>
