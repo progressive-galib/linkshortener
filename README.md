@@ -1,6 +1,6 @@
-# ecommerce
+# linkshortener
 
-A simple sinatra ecommerce site using sqlite.
+A simple sinatra linkshortener app using sqlite.
 
 
 
